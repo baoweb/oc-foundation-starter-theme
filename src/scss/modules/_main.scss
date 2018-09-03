@@ -1,0 +1,120 @@
+.main-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner {
+  background-image: url('../../../assets/img/header-no.jpg');
+  height: 300px;
+  background-size: cover;
+
+  @include breakpoint(medium down) {
+    height: 200px;
+  }
+
+  @include breakpoint(small down) {
+    height: 100px;
+  }
+}
+
+ul {list-style: none}
+
+ul li::before {
+  content: "»";
+  font-weight: 700;
+  font-size: 1.2em;
+  color: $primary-color;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+h1 {
+  font-size: 2.8em;
+  margin-bottom: $main-spacer/2;
+}
+
+h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+
+
+  &.first {
+    margin-top: 0;
+  }
+
+  &.underline {
+    border-bottom: 3px $lighter-blue solid;
+  }
+}
+
+h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: 600;
+
+
+  &.first {
+    margin-top: 0;
+  }
+
+  &.underline {
+    border-bottom: 3px $lighter-blue solid;
+  }
+}
+
+.has-columns-2 {
+  column-count: 2;
+  column-gap: 30px;
+
+  @include breakpoint(medium down) {
+    column-count: 1;
+  }
+
+  &.dont-break-p {
+    p {
+      break-inside: avoid;
+    }
+  }
+}
+
+.has-columns-3 {
+  column-count: 3;
+  column-gap: 30px;
+
+  @include breakpoint(medium down) {
+    column-count: 2;
+  }
+  @include breakpoint(small only) {
+    column-count: 1;
+  }
+
+  &.dont-break-p {
+    p {
+      break-inside: avoid;
+    }
+  }
+}
+
+a {
+  color: $darkest-blue;
+}
+
+.download-icon {
+  display: inline-block;
+  padding-right: 1em;
+  color: $helptext-color;
+
+  &.download-icon--inherit {
+    color: inherit;
+  }
+}
+
+table {
+ font-size: 95%;
+}
