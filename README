@@ -1,1 +1,15 @@
 Run `cp node_modules/foundation-sites/scss/settings/_settings.scss src/scss/_settings.scss`
+
+Update a line
+
+```RewriteCond %{REQUEST_FILENAME} !/themes/.*/(assets|resources)/.*```
+
+to
+
+```    RewriteCond %{REQUEST_FILENAME} !/themes/.*/(assets|resources|templates)/.*```
+
+Add line into .thaccess to a block of  before Block all PHP files, except index
+
+```RewriteCond %{REQUEST_FILENAME} !/themes/.*/(templates)/.*```
+
+just before `RewriteRule !^index.php index.php [L,NC]`
