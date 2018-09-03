@@ -12,8 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.setPublicPath('./')
-    .js('src/js/app.js', 'js/app.js')
-    .sass('src/scss/app.scss', 'css/app.css')
+    .js('src/js/app.js', 'assets/js/app.js')
+    .sass('src/scss/app.scss', 'assets/css/app.css')
     .options({
         fileLoaderDirs: {
             fonts: 'assets/fonts'
