@@ -16,8 +16,16 @@ mix.setPublicPath('./')
     .sass('src/scss/app.scss', 'assets/css/app.css')
     .options({
         fileLoaderDirs: {
-            fonts: 'assets/fonts'
+            fonts: 'themes/[TEHME]/assets/fonts'
         }
+    })
+    .webpackConfig({
+        plugins: [
+            new CopyWebpackPlugin([{
+                from: './themes/[TEHME]/assets/fonts',
+                to: './assets/fonts'
+            }])
+        ]
     });
 
 mix.browserSync({
